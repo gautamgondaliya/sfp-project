@@ -1,0 +1,331 @@
+
+@font-face {
+  font-family: "ITCAvantGardePro";
+  src: url(../../assets/Fonts/Primary/ITCAvantGardePro-Bold.ttf);
+}
+
+
+#cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease-out, width 0.2s, height 0.2s;
+  pointer-events: none;
+  z-index: 9999;
+}
+.homepagecontainer{
+    
+    position: fixed;
+  left: 0;
+  right: 0;
+  will-change: transform;
+  height: 100vh;
+  width: 100vw;
+  
+    transition: 1s ease-in-out;
+ }
+
+ .homepagecontainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    z-index: -1; /* Ensure it's behind content */
+    opacity: 1;
+  }
+  
+  /* Dynamically set different backgrounds */
+  .homepagecontainer[data-bg="0"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/01.webp");
+    object-fit: cover;
+  }
+  .homepagecontainer[data-bg="1"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/02.webp");
+    object-fit: cover;
+  }
+  .homepagecontainer[data-bg="2"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/03.webp");
+  }
+  .homepagecontainer[data-bg="3"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/04.webp");
+  }
+  .homepagecontainer[data-bg="4"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/05.webp");
+  }
+  .homepagecontainer[data-bg="5"]::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("../../assets/Images/sfp2.png");
+  }
+  
+ 
+ .project1name{
+    color: white;
+ }
+
+ .projectallnames {
+    display: flex;
+    flex-direction: row;
+    width: max-content; /* Ensures enough space for all items */
+    
+    
+}
+
+
+ .scroll-container{
+    position: fixed;
+  left: 0;
+  right: 0;
+  will-change: transform;
+
+ 
+ }
+
+ 
+.main-title{
+    list-style: none;
+    width: auto;
+    z-index: 3;
+    cursor: grab;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    white-space: nowrap;
+    
+   
+    font-size: 64px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 50px; /* Add padding to prevent elements from overlapping */
+    text-align: center;
+    transition: color 0.5s ease-in-out, border-bottom 0.5s ease-in-out;
+}
+
+.main-title:hover {
+    color: white;
+}
+
+.main-title h1{
+    cursor: grab;
+    margin: 0 100px;
+}
+/* Default styles */
+.main-title h1 {
+    position: relative;
+    font-size: 60px;
+    letter-spacing: 3px;
+    line-height: 1;
+    font-weight: 800;
+    text-align: center;
+    padding: 0 5px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6); /* Light color initially */
+    transition: color 200ms linear;
+    font-family: "ITCAvantGardePro",sans-serif;
+}
+
+/* Add effect on li hover */
+.main-title:hover h1,
+.main-title.active h1 {
+    color: white; /* Change text color */
+}
+
+/* Underline effect */
+.main-title h1::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    height: 0;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: height 200ms linear, opacity 200ms linear;
+    
+}
+
+/* Increase height and opacity on hover AND when active */
+.main-title:hover h1::before,
+.main-title.active h1::before {
+    height: 20px;
+    opacity: 1;
+}
+
+.projectname-container {
+    height: 100vh;
+    display: flex; /* Ensures items are laid out in a row */
+    width: max-content; /* Allows the container to expand based on content */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+
+.scroll-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100vw; /* Ensure it spans full width */
+    overflow: hidden; /* Prevent elements from being cut off */
+}
+
+.ghost {
+    width: 0vw;
+    height: 300vh; /* Extra space for scrolling */
+}
+.projectname-container {
+    display: flex;
+    min-width: 100vw; /* Ensure full width */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Social Media Links (Vertical Text) */
+.homepage-vertical-text {
+    position: absolute;
+    left: -47px;
+    bottom: 16%;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    color: white;
+    font-family: "ITCAvantGardePro",sans-serif;
+    z-index: 50;
+}
+
+.homepage-vertical-text a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.homepage-vertical-text a:hover {
+    color: gray;
+}
+
+/* Copyright Text */
+.homepage-copyright {
+    position: fixed;
+    right: -47px;
+    bottom: 17%;
+    transform: rotate(90deg);
+    font-size: 15px;
+    color: white;
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+    z-index: 1000;
+
+}
+/* Progress Bar */
+.progress-container {
+    position: fixed;
+    left: 30%;
+    right: 30%;
+    bottom: 35px;
+    z-index: 50;
+    height: 3px; /* Make it visible */
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+/* Draggable Circle */
+.progress-handle {
+    position: relative;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    touch-action: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.progress-handle:active {
+    cursor: grabbing;
+}
+
+/* CSS Code */
+
+.scrollbar-container {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.925);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .scrollbar-thumb {
+    width: 20px;
+    height: 20px;
+    
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    cursor: grab;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    
+  }
+
+  .scrollbar-thumb:hover {
+    width: 25px;
+    height: 25px;
+    
+    background: rgb(175, 175, 175);
+    border-radius: 50%;
+    position: relative;
+    cursor: grab;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+
+
+  
+ .number-slide{
+    position: fixed;
+    left: 30%;
+    right: 30%;
+    bottom: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    pointer-events: none; 
+    z-index: 0 !important;
+    
+    
+ }
+ .lineofnumber{
+    height: 1px;
+    background-color: white;
+    width: 50px;
+
+ }
+
+  
+ 
+ body::-webkit-scrollbar,
+ html::-webkit-scrollbar {
+     display: none;
+ }
+
+ .current-hover-slide{
+  font-family: "ITCAvantGardePro",sans-serif;
+  font-weight: 500;
+ }
+
+ .All-slide{
+  font-family: "ITCAvantGardePro",sans-serif;
+  font-weight: 500;
+ }

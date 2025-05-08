@@ -1,0 +1,302 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF9F6;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Service Container */
+.service-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  padding: clamp(2rem, 5vw, 4rem) 8px;
+  margin-bottom: 50px;
+}
+
+/* Hero section */
+.hero-section-service {
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+ 
+  margin-bottom: 70px;
+
+  margin-top: 170px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.company-title {
+  flex: 1;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #292F36;
+  line-height: 1.1;
+  margin-right: clamp(1rem, 3vw, 2rem);
+  font-family: "ITCAvantGardeProMedium",sans-serif;
+}
+
+.company-description {
+  flex: 1;
+  padding-top: clamp(0.5rem, 1vw, 1rem);
+  font-family: "ITCAvantGardeProMedium",sans-serif;
+}
+
+.company-description p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  color: #292F3699;
+  font-family: "ITCAvantGardeProMedium",sans-serif;
+}
+
+/* Services list */
+.services-list {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+
+.service-item {
+  position: relative;
+  width: 100%;
+  height: clamp(190px, 70vh, 380px);
+  background-size: cover;
+  background-position: center;
+  transition: height 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.service-item.hovered {
+  height: 440px;;
+}
+
+.service-content {
+  padding: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  width: 100%;
+}
+
+.service-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
+  font-family: "ITCAvantGardeProMedium",sans-serif;
+}
+
+.service-description {
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  line-height: 1.6;
+  color: white;
+  max-width: clamp(300px, 70%, 800px);
+  animation: fadeIn 0.3s ease;
+  font-family: "ITCAvantGardeProMedium",sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Background images and overlays for services */
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.production {
+  background-image: url('../../assets/Images/service_advertising.png');
+}
+
+.conceptualization {
+  background-image: url('../../assets/Images/service_concept.png');
+}
+
+.branding {
+  background-image: url('../../assets/Images/service_branding.png');
+}
+
+.advertising {
+  background-image: url('../../assets/Images/service_advertising.png');
+}
+
+.brand-consulting {
+  background-image: url('../../assets/Images/service_brandconsulting.png');
+}
+
+/* Portfolio section */
+.portfolio-section {
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: clamp(3rem, 20vw, 10rem);
+  font-weight: bold;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  background: linear-gradient(to bottom, #f5d776 0%, rgba(245, 215, 118, 0.4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 0.9;
+}
+
+.portfolio-button {
+  background: transparent;
+  border: 1px solid #292F36;
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: #292F36;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-button:hover {
+  background-color: #292F36;
+  color: white;
+}
+
+/* Media Queries for tablet screens */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  .company-title {
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    margin-right: 0;
+
+  }
+  
+  .company-description {
+    padding-top: 0;
+  }
+}
+
+/* Media Queries for small screens */
+@media (max-width: 576px) {
+  .service-container {
+    padding: 0 10px;
+    text-align: center;
+  }
+  
+  .hero-section-service {
+    padding: clamp(1rem, 2vw, 1.5rem) 0;
+  }
+  
+  .service-item {
+    height: clamp(150px, 25vh, 200px);
+  }
+  
+  .service-item.hovered {
+    height: clamp(220px, 35vh, 300px);
+  }
+  
+  .service-content {
+    padding: clamp(0.75rem, 1.5vw, 1rem);
+  }
+  
+  .service-title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+  }
+  
+  .service-description {
+    font-size: clamp(0.75rem, 1.4vw, 0.875rem);
+    max-width: 100%;
+  }
+  
+  .portfolio-title {
+    font-size: clamp(2.5rem, 15vw, 6rem);
+  }
+}
+
+/* Media Queries for large screens */
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .service-container {
+    max-width: 1800px;
+  }
+  
+  .hero-section-service {
+    padding: 4rem 2rem;
+  }
+  
+  .company-title {
+    font-size: 4rem;
+  }
+  
+  .company-description p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+  
+  .service-title {
+    font-size: 3rem;
+  }
+  
+  .service-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+/* Media Queries for 4K screens */
+@media (min-width: 2560px) {
+  html {
+    font-size: 22px;
+  }
+  
+  .service-container {
+    max-width: 2200px;
+  }
+  
+  .hero-section-service {
+    padding: 5rem 3rem;
+  }
+  
+  .service-item {
+    height: 350px;
+  }
+  
+  .service-item.hovered {
+    height: 450px;
+  }
+}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'ITCAvantGardePro'; /* Choose a name for your font family */
+  src: url('./assets/Fonts/Primary/ITCAvantGardePro-Bold.ttf') format('truetype'); /* Path to your font file */
+  font-weight: bold; /* Or the appropriate weight */
+  font-style: normal; /* Or the appropriate style */
+}
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'ITCAvantGardePro', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

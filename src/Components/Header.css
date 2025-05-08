@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "ITCAvantGardePro";
+  src: url(../assets/Fonts/Primary/ITCAvantGardePro-Bold.ttf);
+}
+/* Header */
+.homepage-header {
+  position: fixed;
+  top: 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1000;
+  padding-left: 24px;
+  padding-right: 17px;
+}
+.logo-links img {
+  transition: 1s ease-in-out;
+}
+
+
+
+@media (max-width:450px) {
+  .homepage-header{
+    padding: 0 20px;
+  }
+
+.menu-content li {
+  font-size: 36px !important;
+  line-height: 42px;
+}
+}
+
+@media (max-width:380px) {
+  .homepage-header{
+    padding: 0 10px;
+  }
+}
+
+.logo-links{
+    cursor: pointer;
+    
+}
+
+.menu-icon{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+  
+  .logo-links img {
+    width: 130px;
+  }
+  
+ 
+  .menu-icon img {
+    width: 40px;
+  }
+  
+  .menu-content {
+    position: fixed;
+    top: -110vh; /* Start hidden above the screen */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #FAF9F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.8s ease-in-out;
+    z-index: 100;
+  }
+  
+  .menu-content.open {
+    top: 0; /* Slide down to reveal */
+    z-index: 100;
+  }
+  
+ /* Menu Items */
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    line-height: 58px;
+    z-index: 100;
+}
+
+.menu-content li {
+    margin: 1px 0;
+    position: relative;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.menu-content a {
+    color: rgba(41, 47, 54, 0.8);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: "ITCAvantGardePro",sans-serif;
+}
+
+/* Underline Effect */
+.menu-content a::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    height: 0;
+    bottom: 5px;
+    background-color: rgba(41, 47, 54, 0.3);
+    width: 100%;
+   
+    z-index: 100;
+    opacity: 0;
+    transition: height 200ms linear, opacity 200ms linear;
+}
+
+/* On Hover, Expand the Underline */
+.menu-content a:hover::before,
+.menu-content a.active::before {
+    opacity: 1;
+    height: 20px;
+}
+
+/* On Hover, Change Text Color */
+.menu-content a:hover,
+.menu-content a.active{
+    color: rgba(41, 47, 54, 1);
+}
+
+
+
+  .pop-header{
+   
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    padding-left: 38px;
+    padding-right: 38px;
+    
+  }
+  .background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 400px; /* Adjust size */
+    font-weight: bold;
+    color: rgba(238, 198, 67, 0.15); /* Light transparent text */
+    
+    z-index: -1; /* Keep it behind the menu items */
+    text-transform: lowercase;
+    transition: 0.5s ease-in-out;
+    font-family: "ITCAvantGardePro",sans-serif;
+  }
+
+  .menu-icon {
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .menu-icon.animate {
+    transform: rotate(180deg);
+  }
+  
+
+  
+  .menu-content.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    z-index: 100;
+  }
+.menu-icon{
+  transition: 0.5s ease-in-out;
+}
+
+.menu-icon:hover{
+  opacity: 0.9;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.menu-content {
+  position: fixed;
+  top: -110vh; /* Start hidden above the screen */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #FAF9F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.8s ease-in-out;
+  z-index: 100;
+}
+
+.menu-content.open {
+  top: 0; /* Slide down to reveal */
+}
+
+.menu-content::before,
+.menu-content::after {
+  content: "";
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease-in-out;
+  transform: translateY(-100%);
+}
+
+.menu-content::before {
+  background: rgba(255, 255, 255, 0.1); /* First overlay with 0.5 opacity */
+}
+
+.menu-content::after {
+  background: rgba(194, 194, 194, 0.2); /* Second overlay with 1 opacity */
+}
+
+.menu-content.open::before,
+.menu-content.open::after {
+  transform: translateY(0); /* Slide down to reveal */
+}
+.submenu li{
+
+  color: (255,255,255,0.6);
+  font-size: 40px;
+  padding: 0;
+}
+.submenu a::before{
+  display: none;
+  
+}
+
+.submenu a{
+  text-transform: lowercase;
+}
+
+.submenu{
+line-height: 50px;
+z-index: 1000;
+}
+
+
+.menu-content.open {
+  pointer-events: all;
+  z-index: 100;
+}
+
+
+.background-text.work {
+  font-size: 30vw;
+}
+
+.background-text.studio {
+  font-size: 30vw;
+}
+
+.background-text.services {
+  font-size: 30vw;
+}
+
+.background-text.unscripted {
+  display: none;
+}
+
+.background-text.get-in-touch {
+  display: none;
+
+}
+
+.background-text.contact{
+  font-size: 30vw;
+}
+
+.background-text.career{
+  font-size: 30vw;
+}
+
+
+
+.background-text.bts{
+  font-size: 30vw;
+}
+
+.background-text.blog{
+  font-size: 30vw;
+}

@@ -1,0 +1,270 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #292F36;
+    background-color: #FAF9F6;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  
+  .portfolio-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 0 0;
+    margin-bottom: 100px;
+  }
+  
+  /* Header Mural */
+  .header-mural {
+    width: 100%;
+    background-color: black;
+    margin-bottom: clamp(20px, 5vw, 40px);
+  }
+  
+  .header-mural img {
+    width: 100%;
+    opacity: 70%;
+    height: auto;
+    display: block;
+  }
+  
+  .grid-item {
+    margin-bottom: 0;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+  }
+  
+  /* .grid-item:hover {
+    transform: scale(1.02);
+  } */
+  
+  /* Project Information Section */
+  .project-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: clamp(30px, 6vw, 60px);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+  }
+  
+  .project-meta {
+    width: 100%;
+    margin-bottom: clamp(20px, 4vw, 30px);
+  }
+  
+  .meta-item {
+    margin-bottom: clamp(10px, 3vw, 20px);
+  }
+  
+  .meta-title {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #999;
+    font-weight: 500;
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+  }
+  
+  .meta-content {
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    line-height: 1.4;
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+  }
+  
+  .project-headline {
+    width: 100%;
+  }
+  
+  .subheading {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: #666;
+    margin-bottom: clamp(4px, 1vw, 8px);
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+  }
+  
+  .main-heading {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: #292F36;
+    font-family: "ITCAvantGardePro",sans-serif;
+  }
+  
+  /* Process Images */
+  .process-image-full {
+    width: 100%;
+    margin-bottom: clamp(20px, 5vw, 40px);
+    overflow: hidden;
+  }
+  
+  .process-image-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  /* .process-image-full img:hover  {
+    transform: scale(1.02);
+  } */
+  
+  /* Design Artifacts Grid */
+  .design-artifacts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(20px, 5vw, 40px);
+  }
+  
+  /* Portfolio Content */
+  .portfolio-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem) 0;
+    margin-bottom: clamp(20px, 5vw, 40px);
+  }
+  
+  .portfolio-content h3 {
+    width: 100%;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 900;
+    margin-bottom: clamp(10px, 2vw, 15px);
+    color: #292F36;
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+  }
+  
+  .portfolio-content-div {
+    width: 100%;
+  }
+  
+  .portfolio-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: clamp(10px, 3vw, 20px);
+    font-family: "ITCAvantGardeProMedium",sans-serif;
+  }
+  
+  .credits {
+    font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+    color: #999;
+    line-height: 1.4;
+  }
+  
+  .header-portfolio{
+    position: absolute;
+    width: -webkit-fill-available;
+  }
+
+ 
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .project-info-section {
+      flex-direction: row;
+    }
+    
+    .project-meta {
+      width: 30%;
+      margin-bottom: 0;
+    }
+    
+    .project-headline {
+      width: 65%;
+    }
+    
+    .design-artifacts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-content {
+      flex-direction: row;
+    }
+    
+    .portfolio-content h3 {
+      width: 50%;
+    }
+    
+    .portfolio-content-div {
+      width: 50%;
+    }
+  }
+
+  @media(max-width:576px){
+    .project-meta{
+      display: flex;
+      gap: 60px;
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 576px) and (max-width: 991px) {
+    .main-heading {
+      font-size: clamp(1.75rem, 3.5vw, 2rem);
+    }
+    
+    .portfolio-content p {
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    }
+  }
+  
+  /* For large screens */
+  @media (min-width: 1440px) {
+    html {
+      font-size: 18px;
+    }
+    
+    .portfolio-container {
+      padding: 0 2rem;
+    }
+    
+    .main-heading {
+      font-size: 2.5rem;
+    }
+    
+    .portfolio-content p {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* For 4K screens */
+  @media (min-width: 2560px) {
+    html {
+      font-size: 22px;
+    }
+    
+    .portfolio-container {
+      max-width: 2000px;
+    }
+    
+    .main-heading {
+      font-size: 3rem;
+    }
+    
+    .meta-content {
+      font-size: 1.2rem;
+    }
+    
+    
+  }
