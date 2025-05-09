@@ -119,7 +119,7 @@ const Header = () => {
 
       
         <ul>
-          <li><Link to="/" className={activeMenu === "Work" ? "active" : ""} onClick={() => handleMenuClick("Work")}>Work</Link></li>
+          <li><Link to="/work" className={activeMenu === "Work" ? "active" : ""} onClick={() => handleMenuClick("Work")}>Work</Link></li>
           <li><Link to="/studio" className={activeMenu === "Studio" ? "active" : ""} onClick={() => handleMenuClick("Studio")}>Studio</Link></li>
           <li><Link to="/services" className={activeMenu === "Services" ? "active" : ""} onClick={() => handleMenuClick("Services")}>Services</Link></li>
           <li>
